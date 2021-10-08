@@ -63,7 +63,7 @@ module.exports = {
             });
             next(e);
         }
-    },
+    }, 
 
     //PUT grabar mensajes
     msg: async (req, res, next) => {

@@ -7,4 +7,4 @@ router.get('/:id', servicioController.ver);
 router.put('/:id/asignar/:idEspecialista', servicioController.asignar);
 router.post('/msg', servicioController.msg);
 
-module.exports = router;
+module.exports = router; 
