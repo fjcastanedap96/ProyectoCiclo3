@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "a455e755-b4cb-4459-9dac-44b20bb1da66",
 		"name": "proyecto APP",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -17,7 +17,19 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "http://localhost:3000/api/servicio/615a1805880c5ee02828c86e"
+				"url": {
+					"raw": "http://localhost:3000/api/servicio/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"servicio",
+						"lista"
+					]
+				}
 			},
 			"response": []
 		},
@@ -33,7 +45,19 @@
 					"mode": "urlencoded",
 					"urlencoded": []
 				},
-				"url": "http://localhost:3000/api/especialidad/lista"
+				"url": {
+					"raw": "http://localhost:3000/api/especialidad/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"especialidad",
+						"lista"
+					]
+				}
 			},
 			"response": []
 		},
@@ -42,7 +66,19 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3000/api/usuario/lista"
+				"url": {
+					"raw": "http://localhost:3000/api/usuario/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario",
+						"lista"
+					]
+				}
 			},
 			"response": []
 		},
@@ -66,7 +102,19 @@
 						}
 					]
 				},
-				"url": "http://localhost:3000/api/usuario/login"
+				"url": {
+					"raw": "http://localhost:3000/api/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario",
+						"login"
+					]
+				}
 			},
 			"response": []
 		},
@@ -80,37 +128,153 @@
 					"urlencoded": [
 						{
 							"key": "nombres",
-							"value": "magandy",
+							"value": "francisco",
 							"type": "text"
 						},
 						{
 							"key": "apellidos",
-							"value": "castañeda",
+							"value": "pineda",
 							"type": "text"
 						},
 						{
 							"key": "correo",
-							"value": "sistemas@ipscartago.gov.co",
+							"value": "pielroja.online@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "telefono",
-							"value": "2095002",
+							"value": "3015696868",
 							"type": "text"
 						},
 						{
 							"key": "direccion",
-							"value": "calle 1",
+							"value": "calle 21 3",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "123456",
 							"type": "text"
+						},
+						{
+							"key": "idEspecialidad",
+							"value": "615a08bafc9b9f88de6d144c",
+							"type": "text"
 						}
 					]
 				},
-				"url": "http://localhost:3000/api/usuario/nuevo"
+				"url": {
+					"raw": "http://localhost:3000/api/usuario/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "servicio add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "asunto",
+							"value": "formatear pc",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "un detalle del servicio",
+							"type": "text"
+						},
+						{
+							"key": "fechaInicio",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "idUsuario",
+							"value": "615f5646a565a34e8a572f57",
+							"type": "text"
+						},
+						{
+							"key": "mensajes",
+							"value": "null",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/servicio/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"servicio",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "servicio mensaje",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "6160951964cfdf6e864a4e4d",
+							"type": "text"
+						},
+						{
+							"key": "msg",
+							"value": "tersero mensaje ",
+							"type": "text"
+						},
+						{
+							"key": "usuario",
+							"value": "615f5646a565a34e8a572f57",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/servicio/msg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"servicio",
+						"msg"
+					]
+				}
 			},
 			"response": []
 		}
