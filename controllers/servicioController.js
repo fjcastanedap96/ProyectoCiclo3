@@ -4,6 +4,7 @@ module.exports = {
     // POST - Agregar una servicio
     nuevo: async (req, res, next) => {
         const body = req.body;
+        //body.mensajes = null;
         try {
             const servicioBD = await models.Servicio.create(body);
             res.status(200).json(servicioBD);
@@ -33,7 +34,10 @@ module.exports = {
     // GET - Obtener todos los documentos
     lista: async (req, res, next) => {
         try {
-            const servicioBD = await models.Servicio.find().populate('idUsuario', { nombres: 1, apellidos: 1, _id: 0 });
+            const servicioBD = await models.Servicio.find(
+                                {},
+                                {_id: 1, asunto: 1, descripcion: 1, fechaInicio: 1, idUsuario: 1})
+                                .populate('idUsuario', { nombres: 1, apellidos: 1, _id: 0 });
             res.status(200).json(servicioBD);
         } catch (e) {
             return res.status(400).json({
@@ -49,10 +53,34 @@ module.exports = {
         const body = req.body;
         try {
             const servicioBD = await models.Servicio.findByIdAndUpdate(
-                _id,
+                {_id},
                 { idEspecilista: req.params.idEspecialista },
                 { new: true });
             res.status(200).json(servicioBD);
+        } catch (e) {
+            res.status(400).send({
+                mensaje: 'Ocurrio un error'
+            });
+            next(e);
+        }
+    },
+
+    //PUT grabar mensajes
+    msg: async (req, res, next) => {
+        const _id = req.body.id;
+        const _msg = req.body.msg;
+        const _usuario = req.body.usuario;       
+        const body = req.body;
+        console.log(body);
+        try {            
+            const servicioBD = await models.Servicio.findByIdAndUpdate(
+                {_id},
+                { $push: { mensajes: body}});            
+            res.status(200).json(servicioBD);
+            /*const servicioBD = await models.Servicio.findById({ _id });            
+            servicioBD.mensajes.push(body);
+            servicioBD.save();
+            res.status(200).json(servicioBD);*/ 
         } catch (e) {
             res.status(400).send({
                 mensaje: 'Ocurrio un error'

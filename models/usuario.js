@@ -8,7 +8,7 @@ const usuarioShema = new Schema({
     telefono: Number,    
     direccion: String,    
     password: {type: String, required: [true, 'Contreseña requerida']},
-    especialidad: { type: Schema.Types.ObjectId, ref:'especialidad'},//{type: Number, default: null},
+    idEspecialidad: { type: Schema.Types.ObjectId, ref:'especialidad'},//{type: Number, default: null},
     activo: {type: Boolean, default: true}
 });
 
