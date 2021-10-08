@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "a455e755-b4cb-4459-9dac-44b20bb1da66",
+		"name": "proyecto APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Servicio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:3000/api/servicio/615a1805880c5ee02828c86e"
+			},
+			"response": []
+		},
+		{
+			"name": "Especialidad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:3000/api/especialidad/lista"
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/usuario/lista"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "correo",
+							"value": "sistemas@ipscartago.gov.co",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/usuario/login"
+			},
+			"response": []
+		},
+		{
+			"name": "crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombres",
+							"value": "magandy",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "castañeda",
+							"type": "text"
+						},
+						{
+							"key": "correo",
+							"value": "sistemas@ipscartago.gov.co",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "2095002",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "calle 1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/usuario/nuevo"
+			},
+			"response": []
+		}
+	]
+}
