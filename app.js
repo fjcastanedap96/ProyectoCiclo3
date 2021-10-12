@@ -16,7 +16,7 @@ import path from 'path';
 mongoose.Promise = global.Promise;
 //const mongoose = require('mongoose');
 //const uri = 'mongodb://localhost:27017/myapp';
-const uri = 'mongodb+srv://octopus:x3e2qAA2FvJ3c2EE@octopusservices.58doo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://octopus:x3e2qAA2FvJ3c2EE@octopusservices.58doo.mongodb.net/myapp?retryWrites=true&w=majority';
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 //or using promises
 mongoose.connect(uri, options).then(    
