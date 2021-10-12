@@ -87,6 +87,23 @@ module.exports = {
             });
             next(e);
         }
+    },
+
+    //GET mostrar los mensajes
+    verMsg: async (req, res, next) => {
+        const _id = req.params.id;
+        try {
+            const servicioBD = await models.Servicio.findOne({ _id },
+                                                            {mensajes: 1}
+                                                            ).populate('usuario', { nombres: 1, apellidos: 1, _id: 0 })
+                                                                    
+            res.status(200).json(servicioBD);
+        } catch (e) {
+            res.status(400).send({
+                mensaje: 'Ocurrio un error'
+            });
+            next(e);
+        }
     }
 }
 
