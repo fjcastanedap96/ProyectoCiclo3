@@ -12,6 +12,7 @@ const servicioShema = new Schema({
     descripcion: {type: String, required: [true, 'Descripcion Obligatorio']},    
     fechaInicio: {type: Date, default: Date.now},    
     idUsuario: { type: Schema.Types.ObjectId, ref:'usuario' },
+    idEspecialidad: { type: Schema.Types.ObjectId, ref:'especialidad' },
     idEspecilista: { type: Schema.Types.ObjectId, ref:'usuario'},
     mensajes: [mensajeShema]
 });

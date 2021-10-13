@@ -21,6 +21,7 @@ module.exports = {
         const _id = req.params.id;
         try {
             const servicioBD = await models.Servicio.findOne({ _id }).populate('idUsuario', { nombres: 1, apellidos: 1, _id: 0 })
+                                                                    .populate('idEspecialidad', { nombre: 1, _id: 1 })
                                                                     .populate('idEspecilista', { nombres: 1, apellidos: 1, _id: 0 });
             res.status(200).json(servicioBD);
         } catch (e) {
@@ -37,6 +38,7 @@ module.exports = {
             const servicioBD = await models.Servicio.find(
                                 {},
                                 {_id: 1, asunto: 1, descripcion: 1, fechaInicio: 1, idUsuario: 1})
+                                .populate('idEspecialidad', { nombre: 1, _id: 1 })
                                 .populate('idUsuario', { nombres: 1, apellidos: 1, _id: 0 });
             res.status(200).json(servicioBD);
         } catch (e) {

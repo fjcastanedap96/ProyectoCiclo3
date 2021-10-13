@@ -11,5 +11,7 @@ x3e2qAA2FvJ3c2EE
 
 mongodb+srv://octopus:<password>@octopusservices.58doo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
+mongodb+srv://octopus:x3e2qAA2FvJ3c2EE@octopusservices.58doo.mongodb.net/myapp?retryWrites=true&w=majority
+
 
 https://cloud.mongodb.com/v2/6164db43f10c7a3764c19a4b#clusters
