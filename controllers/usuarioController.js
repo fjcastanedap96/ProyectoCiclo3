@@ -25,19 +25,19 @@ module.exports = {
 
     // POST - Loging usuario
     login: async(req, res, next) => {
-        try {
-            console.log(req.body.correo)
+        try {            
             let user = await models.Usuario.findOne( 
                 { 
-                    correo : req.body.correo,
-                    estado : 1
+                    correo : req.body.correo,                   
+                    activo: 1
                  } 
             );
             if (user) {
                 let match = await bcrypt.compare(req.body.password, user.password);
                 if (match) {
                     console.log(user.rol);
-                    let tokenReturn = await token.encode(user);
+                    let tokenReturn = await token.encode(user);                    
+                    console.log(tokenReturn);
                     res.status(200).json({ user, tokenReturn });
                 } else {
                     res.status(401).send({

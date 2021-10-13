@@ -1,13 +1,18 @@
 const models = require('../models');
+const tokenService = require('../services/token');
 
 module.exports = {
     // POST - Agregar una servicio
     nuevo: async (req, res, next) => {
-        const body = req.body;
+        const body = req.body;        
         //body.mensajes = null;
+        const response = await tokenService.decode(req.headers.tokenReturn);
+        //console.log(req.headers.authorization);
+        console.log(body);
+        
         try {
-            const servicioBD = await models.Servicio.create(body);
-            res.status(200).json(servicioBD);
+            /*const servicioBD = await models.Servicio.create(body);
+            res.status(200).json(servicioBD);*/
         } catch (e) {
             res.status(500).send({
                 mensaje: 'Ocurrio un error'
